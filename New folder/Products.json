@@ -1,11 +1,9 @@
 [
     {
-        "id": "1",
         "category": "Apple",
         "img": "https://toppng.com/uploads/preview/apple-logo-logo-png-transparent-background-11659045662t6m4u3uiwq.png",
         "products": [
             {
-                "id": "1",
                 "product_name": "iphone 14 pro max",
                 "image": "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-14-Pro-Max-Deep-Purple-7900.jpg",
                 "location": "Mirpur, Dhaka",
@@ -16,7 +14,6 @@
                 "postTime": "24 november, 2022"
             },
             {
-                "id": "2",
                 "product_name": "iphone 13 pro",
                 "image": "https://adminapi.applegadgetsbd.com/storage/media/large/3412-49256.jpg",
                 "location": "Mirpur, Dhaka",
@@ -27,7 +24,6 @@
                 "postTime": "24 november, 2022"
             },
             {
-                "id": "3",
                 "product_name": "iphone 12",
                 "image": "https://www.mobiledokan.com/wp-content/uploads/2020/10/Apple-iphone-12-Pro-Max.jpg",
                 "location": "Mirpur, Dhaka",
@@ -40,12 +36,10 @@
         ]
     },
     {
-        "id": "2",
         "category": "Samsung",
         "img": "https://www.logotypes101.com/logos/280/629D0D161F755E148CACE4203C5C4658/samsung.png",
         "products": [
             {
-                "id": "1",
                 "product_name": "Samsung Galaxy Z Fold4",
                 "image": "https://diamu.com.bd/wp-content/uploads/2022/08/Samsung-Galaxy-Z-Fold4-Graygreen-2.jpg",
                 "location": "Mirpur, Dhaka",
@@ -56,7 +50,6 @@
                 "postTime": "24 november, 2022"
             },
             {
-                "id": "2",
                 "product_name": "Samsung Galaxy S20 FE 2022",
                 "image": "https://www.muthophone.com.bd/image/cache/catalog/mobiles/samsung/samsung-galaxy-s20-fe-2022/samsung-galaxy-s20-fe-2022-02-600x600.jpg",
                 "location": "Mirpur, Dhaka",
@@ -67,7 +60,6 @@
                 "postTime": "24 november, 2022"
             },
             {
-                "id": "3",
                 "product_name": "Samsung Galaxy A72",
                 "image": "https://static.gadgetandgear.com/tmp/product/20210402_1617357362_759064.jpeg",
                 "location": "Mirpur, Dhaka",
@@ -80,12 +72,10 @@
         ]
     },
     {
-        "id": "3",
         "category": "Xiaomi",
         "img": "https://e7.pngegg.com/pngimages/121/932/png-clipart-xiaomi-logo-illustration-xiaomi-mi-a1-xiaomi-mi-1-computer-icons-lenovo-logo-angle-electronics.png",
         "products": [
             {
-                "id": "1",
                 "product_name": "Xiaomi Redmi Note 12 Pro+",
                 "image": "https://www.bdprice.com.bd/wp-content/uploads/2022/10/Xiaomi-Redmi-Note-12-Pro-Black-Price-in-Bangladesh-1.jpg",
                 "location": "Mirpur, Dhaka",
@@ -96,7 +86,6 @@
                 "postTime": "24 november, 2022"
             },
             {
-                "id": "2",
                 "product_name": "Xiaomi Redmi A1+",
                 "image": "https://www.bdprice.com.bd/wp-content/uploads/2022/11/Xiaomi-Redmi-A1-Plus-Light-Green-Price-in-Bangladesh.jpg",
                 "location": "Mirpur, Dhaka",
@@ -107,7 +96,6 @@
                 "postTime": "24 november, 2022"
             },
             {
-                "id": "3",
                 "product_name": "Xiaomi Redmi 10 Prime",
                 "image": "https://onlinebdmarket.com/wp-content/uploads/2022/04/4Xiaomi_Redmi_10_Prime_Plus-400x450.jpg",
                 "location": "Mirpur, Dhaka",
