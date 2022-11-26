@@ -1,21 +1,27 @@
 const express = require('express');
 const cors = require('cors');
-// const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-// const { query } = require('express');
-// require('dotenv').config();
-// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+const port =  process.env.PORT || 5000;
 
-const port = process.env.PORT || 5000;
 const app = express();
 
-// middleware
+// middlewares
 app.use(cors());
 app.use(express.json());
 
-
-
-app.get('/', async (req, res) => {
-    res.send('Product marketing server is running');
+// load products
+const products = require('./Products.json');
+app.get('/products', (req, res) => {
+    res.send(products)
+})
+app.get('/products/:id', (req, res) => {
+    const id = req.params.id;
+    const seletedProduct= products.find(n => n.id === id)
+    res.send(seletedProduct);
 })
 
-app.listen(port, () => console.log(`Product marketing running on ${port}`))
+app.get('/', async (req, res) => {
+    res.send('Product marketing server running on server')
+})
+app.listen(port , () => {
+    console.log("Product marketing running on port ", port);
+})
