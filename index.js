@@ -101,36 +101,7 @@ async function run() {
       res.send(bookings);
     })
 
-      //   wish list
-      app.post('/wishlist', async (req, res) => {
-        const wishlist = req.body;
-        const query = {
-          name: wishlist.name,
-          email: wishlist.email,
-          productName: wishlist.productName,
-          resalePrice: wishlist.resalePrice,
-          originalPrice: wishlist.originalPrice
-        }
-        const wish = await wishListCollection.find(query).toArray();
-        if (wish.length) {
-          const message = `You Already added this on WishList`
-          return res.send({ acknowledge: false, message });
-        }
-        const result = await wishListCollection.insertOne(query);
-        res.send(result)
-      });
-
-    app.get('/wishlist', async (req, res) => {
-      const email = req.query.email;
-      // const decodeEmail = req.decoded.email;
-      // if (email !== decodeEmail) {
-      //   return res.status(403).send({ message: 'forbidden access' });
-      // }
-
-      const query = { email: email };
-      const wishlist = await wishListCollection.find(query).toArray();
-      res.send(wishlist);
-    })
+     
 
     // add advertise items
     app.post('/advertise', async (req, res) => {
