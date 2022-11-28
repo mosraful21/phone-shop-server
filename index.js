@@ -80,7 +80,7 @@ async function run() {
         resalePrice: booking.resalePrice,
         location: booking.location,
       }
-      const Booked = await bookingsCollection.find(query).toArray();
+      const Booked = await bookingsCollection.find(booking).toArray();
       if (Booked.length) {
         const message = `You Already buy this ${booking.productName}`
         return res.send({ acknowledge: false, message });
@@ -101,7 +101,45 @@ async function run() {
       res.send(bookings);
     })
 
-     
+    //delete user
+    app.delete("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      //console.log(id);
+      const filter = { _id: ObjectId(id) };
+      const result = await usersCollection.deleteOne(filter);
+      res.send(result);
+    });
+
+      //   wish list
+      app.post('/wishlist', async (req, res) => {
+        const wishlist = req.body;
+        const query = {
+          name: wishlist.name,
+          email: wishlist.email,
+          productName: wishlist.productName,
+          resalePrice: wishlist.resalePrice,
+          originalPrice: wishlist.originalPrice
+        }
+        const wish = await wishListCollection.find(query).toArray();
+        if (wish.length) {
+          const message = `You Already added this on WishList`
+          return res.send({ acknowledge: false, message });
+        }
+        const result = await wishListCollection.insertOne(query);
+        res.send(result)
+      });
+
+    app.get('/wishlist', async (req, res) => {
+      const email = req.query.email;
+      // const decodeEmail = req.decoded.email;
+      // if (email !== decodeEmail) {
+      //   return res.status(403).send({ message: 'forbidden access' });
+      // }
+
+      const query = { email: email };
+      const wishlist = await wishListCollection.find(query).toArray();
+      res.send(wishlist);
+    })
 
     // add advertise items
     app.post('/advertise', async (req, res) => {
@@ -148,21 +186,21 @@ async function run() {
       const email = req.params.email;
       const query = { email }
       const user = await usersCollection.findOne(query);
-      res.send({ isAdmin: user?.status === 'admin' });
+      res.send({ isAdmin: user?.role === 'admin' });
   })
   // check a user is a seller or not
     app.get('/users/seller/:email', async (req, res) => {
       const email = req.params.email;
       const query = { email }
       const user = await usersCollection.findOne(query);
-      res.send({ isSeller: user?.status === 'seller' });
+      res.send({ isSeller: user?.status === 'Seller' });
   })
   // check a user is a buyer or not
     app.get('/users/buyer/:email', async (req, res) => {
       const email = req.params.email;
       const query = { email }
       const user = await usersCollection.findOne(query);
-      res.send({ isBuyer: user?.status === 'user' });
+      res.send({ isBuyer: user?.status === 'User' });
   })
      // save product
      app.post("/addproduct", async (req, res) => {
