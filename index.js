@@ -158,7 +158,13 @@ async function run() {
       const advertise = await advertiseCollection.find(query).toArray();
       res.send(advertise);
     })
-   
+     // delete advertised
+     app.delete("/advertise/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: ObjectId(id) };
+      const result = await advertiseCollection.deleteOne(filter);
+      res.send(result);
+    });
     
 
     //   jwt
